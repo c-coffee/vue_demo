@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <button class="btn btn-primary" type="button" v-on:click="show()">点击</button>
+    <div class="alert alert-success">{{count}}</div>
+    <hr>
+    <button class="btn btn-danger" v-on:click="close()">关闭</button>
+    <div class="alert alert-danger" v-show="isClose">
+        警告：系统出现严重错误！
+    </div>
+</div>
+
+<script src="js/vue.js"></script>
+<script>
+    var c = new Vue({
+        el:'body',
+        data:{
+            count:0,
+            isClose:false
+        },
+        methods:{
+            show:function(){
+                this.count++;
+                //alert(this === c);
+            },
+            close:function(){
+                this.isClose=!this.isClose;
+            }
+        }
+    });
+</script>
+</body>
+</html>
