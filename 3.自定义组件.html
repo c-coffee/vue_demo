@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <my-component></my-component>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    Vue.component("my-component",{
+        template:"<h3 @click='addCount'>{{msg}} + {{count}}</h3>",
+        data:function(){
+            return {
+                msg:"Hello,I am component.",
+                count:0
+            }
+        },
+        methods:{
+            addCount:function(){
+                this.count++;
+            }
+        }
+    });
+    new Vue({
+        data:{},
+        methods:{}
+    }).$mount(".container");
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <my-component1 :m="'zhangsan'"></my-component1>
+</div>
+<template id="test_template">
+    <h1>我是一个组件模版{{m}}<br><child-component :msg=""></child-component></h1>
+</template>
+<template id="child_t">
+    <h3>我是一个子组件模版</h3>
+</template>
+<script src="js/vue.js"></script>
+<script>
+    new Vue({
+        data:{
+
+        },
+        methods:{
+
+        },
+        components:{
+            "my-component1":{
+                data:{
+
+                },
+                props:{
+                    'm':String
+                },
+                template:"#test_template",
+                components:{
+                    "child-component":{
+                        template:"#child_t"
+                    }
+                }
+            }
+        }
+    }).$mount(".container");
+</script>
+</body>
+</html>

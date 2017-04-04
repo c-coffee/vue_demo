@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div>
+    <div class="container" id="box">
+        价格：<input type="number" v-model="num"><br>
+        数量：<input type="number" v-model="price"><br>
+        总价：<span>{{total}}</span>
+    </div>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#box",
+        data:{
+            num:0,
+            price:0
+        },
+        computed:{
+            total:{
+                get:function(){
+                    return this.num * this.price;
+                },
+                set:function(d){
+                    this.num = d;
+                }
+            }
+        }
+    });
+    document.onclick=function(){
+        vm.total = 100;
+    }
+</script>
+</body>
+</html>

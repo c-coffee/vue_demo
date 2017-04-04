@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div>
+    <div class="container" id="box">
+        {{msg}}
+    </div>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    let vm =new Vue({
+        el: "#box",
+        aa:11,
+        data: {
+            msg:"Hello Vue!"
+        },
+        methods: {}
+    });
+    vm.$el.style.background="red";
+    console.log(vm.data,vm.$options.aa);
+</script>
+</body>
+</html>

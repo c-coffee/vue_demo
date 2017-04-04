@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div>
+    <div class="container" id="box">
+        <button @click="add">添加</button>
+        {{fruit}}
+        <ul>
+            <li v-for="(v,i) in fruit" >{{i}} - {{v}}</li>
+        </ul>
+    </div>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    new Vue({
+        el: "#box",
+        data: {
+            fruit:["apple","orange","banana","pear"]
+        },
+        methods: {
+            add:function(){
+                this.fruit.push("peach");
+            }
+        }
+    });
+</script>
+</body>
+</html>

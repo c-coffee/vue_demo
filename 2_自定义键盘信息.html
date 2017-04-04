@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div>
+    <div class="container" id="box">
+        <input type="text" @keydown.myenter="show">
+    </div>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    Vue.config.keyCodes.myenter = 13;
+    window.onload=function(){
+
+        new Vue({
+            el: "#box",
+            data: {
+                num:11
+            },
+            methods: {
+                show:function(e){
+                    //console.log(e);
+                    alert(1)
+                }
+            }
+        });
+    };
+
+</script>
+</body>
+</html>

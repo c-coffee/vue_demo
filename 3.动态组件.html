@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <button type="button" @click="changeCom(1)">组件1</button>
+    <button type="button" @click="changeCom(2)">组件2</button>
+    <component :is="com"></component>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    new Vue({
+        data:{
+            com:"my-component1",
+        },
+        methods:{
+            changeCom:function(num){
+                if(num==1){
+                    this.com = "my-component1"
+                }else{
+                    this.com = "my-component2"
+                }
+            }
+        },
+        components:{
+            "my-component1":{
+                template:"<h1>我是第一个组件</h1>"
+            },
+            "my-component2":{
+                template:"<h1>我是第二个组件</h1>"
+            },
+        }
+    }).$mount(".container");
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div>
+    <div class="container" id="box">
+        <div v-dragdiv :style="{left:0,top:0,position:'absolute',width:'100px',height:'100px',background:'blue'}">
+
+        </div>
+    </div>
+</div>
+<script src="js/vue.js"></script>
+<script>
+
+    window.onload=function(){
+
+        new Vue({
+            el: "#box",
+            data: {
+                num:11
+            },
+            methods: {}
+        });
+    };
+
+</script>
+</body>
+</html>

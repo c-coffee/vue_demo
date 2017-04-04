@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <style>
+        #box{
+            width:200px;
+            height:200px;
+            background: red;
+            color:white;
+            transition:all 2s linear;
+        }
+
+        .slide-fade-enter{
+            opacity:1;
+        }
+        .slide-fade-enter-active{
+            opacity:0;
+        }
+        .slide-fade-leave{
+            opacity: 1;
+        }
+        .slide-fade-leave-active{
+            opacity:0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <button type="button" @click="show">Toggle</button>
+    <transition>
+        <div v-show="flag" id="box" class="slide-fade">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis doloribus eveniet illo laudantium nemo praesentium quisquam. At doloribus dolorum perspiciatis sint voluptatem! A dolorem illum nemo officia pariatur, quis sint!</div>
+    </transition>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    new Vue({
+        data:{
+            flag:true
+        },
+        methods:{
+            show:function(){
+                this.flag = !this.flag;
+                console.log(this.flag);
+            }
+        }
+    }).$mount(".container");
+</script>
+</body>
+</html>
